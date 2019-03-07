@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId "com.android.deskclock"
+        renderscriptTargetApi 11
+        renderscriptSupportModeEnabled true
+        vectorDrawables {
+            useSupportLibrary true
+        }
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        buildToolsVersion "28.0.3"
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:support-v4:$versions.support"
+    implementation "com.android.support:design:$versions.support"
+    implementation "com.android.support:percent:$versions.support"
+    implementation "com.android.support:transition:$versions.support"
+    implementation "com.android.support:support-compat:$versions.support"
+    implementation "com.android.support:support-core-ui:$versions.support"
+    implementation "com.android.support:support-media-compat:$versions.support"
+    implementation "com.android.support:support-v13:$versions.support"
+    implementation "com.android.support:preference-v14:$versions.support"
+    implementation "com.android.support:appcompat-v7:$versions.support"
+    implementation "com.android.support:gridlayout-v7:$versions.support"
+    implementation "com.android.support:preference-v7:$versions.support"
+    implementation "com.android.support:recyclerview-v7:$versions.support"
+    implementation "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+    implementation "android.arch.work:work-runtime:$versions.work"
+}
